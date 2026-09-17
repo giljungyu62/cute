@@ -1,17 +1,19 @@
 import http.server
+from datetime import datetime
 
 print(http.server)
 
 request_handler = http.server.BaseHTTPRequestHandler
 http_server = http.server.HTTPServer
 
-page = """
+now = datetime.now()
+page = f"""
 <html>
 <head>
     <meta charset="utf-8"> 
 </head>
 <body>
-    <h1 style = "color:blue;"> 길준규 </h1>
+    <h1 style = "color:blue;"> {now} </h1>
 </body>
 </html>
 """
