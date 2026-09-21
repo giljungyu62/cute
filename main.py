@@ -11,5 +11,7 @@ class MyServer(http.server.BaseHTTPRequestHandler):
 
 address = ("127.0.0.1", 8080)
 server = http.server.HTTPServer(address, MyServer)
+print("서버 가동중!: http://127.0.0.1:8000")
+print("서버를 종료하고 싶다면 ctrl + c ")
 server.serve_forever()
 
