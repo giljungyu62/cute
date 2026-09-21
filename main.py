@@ -2,13 +2,14 @@
 
 import http.server
 
-class MyServer():
-    insa = "hello"
+class MyServer(http.server.BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header("Content-type", "text/html; charset=utf-8")
+        self.end_headers()
+        self.wfile.write("길준규".encode("utf-8"))
 
-    def hello():
-        return "안녕?"
+address = ("127.0.0.1", 8080)
+server = http.server.HTTPServer(address, MyServer)
+server.serve_forever()
 
-
-test = MyServer()
-test.hello()
-print(test.insa)
