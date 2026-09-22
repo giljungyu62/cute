@@ -10,3 +10,13 @@ def members_list(tag_name, array):
 
 print("반환값")
 print(members_list("li", member))
+
+
+def a():
+    
+    return "길준규"
+
+
+
+
+print(a())
